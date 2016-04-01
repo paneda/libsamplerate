@@ -79,8 +79,8 @@ simple_test (int converter)
 	int ilen = 199030, olen = 1000, error ;
 
 	{
-		float in [ilen] ;
-		float out [olen] ;
+		float *in = malloc(ilen * sizeof(float)) ;
+		float *out = malloc(olen * sizeof(float)) ;
 		double ratio = (1.0 * olen) / ilen ;
 		SRC_DATA src_data =
 		{	in, out,
@@ -94,6 +94,8 @@ simple_test (int converter)
 		{	printf ("\n\nLine %d : %s\n\n", __LINE__, src_strerror (error)) ;
 			exit (1) ;
 			} ;
+		free(in);
+		free(out);
 	} ;
 
     return ;

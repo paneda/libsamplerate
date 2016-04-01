@@ -24,6 +24,11 @@
 
 #include	"util.h"
 
+#if defined ( WIN32 )
+#define __func__ __FUNCTION__
+#define pclose _pclose
+#endif
+
 #ifndef	M_PI
 #define	M_PI			3.14159265358979323846264338
 #endif

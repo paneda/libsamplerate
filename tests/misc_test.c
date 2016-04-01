@@ -24,6 +24,10 @@
 
 #include "util.h"
 
+#if defined ( WIN32 )
+#define __func__ __FUNCTION__
+#endif
+
 static void name_test (void) ;
 static void error_test (void) ;
 static void src_ratio_test (void) ;

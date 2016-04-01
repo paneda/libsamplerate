@@ -25,6 +25,11 @@
 
 #define BLOCK_LEN		100
 
+#if defined ( WIN32 )
+#define ARRAY_LEN(array) (sizeof((array))/sizeof((array)[0]))
+#define MIN(X, Y) (((X) < (Y)) ? (X) : (Y))
+#endif
+
 static void stream_test (int converter, double ratio) ;
 
 int
